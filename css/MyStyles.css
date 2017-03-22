@@ -384,7 +384,7 @@ a.cv-button{
   width: 100%;
   bottom: 0px;
   margin-left: 50px;
-  background: url(../img/s1/Agus.png) no-repeat bottom center scroll;
+  background: url(../img/s1/Agus.jpg) no-repeat bottom center scroll;
   background-size: contain;
   -webkit-background-size: contain;
   -moz-background-size: contain;
@@ -750,13 +750,13 @@ background-size: contain;}
 background-size: contain;}
 
 
-.slide-custom#slide23{background: url(../img/project1-8.png)no-repeat center center;
+.slide-custom#slide23{background: url(../img/project1-8.jpg)no-repeat center center;
 background-size: contain;}
-.slide-custom#slide5{background: url(../img/project2-1.png)no-repeat center center;
+.slide-custom#slide5{background: url(../img/project2-1.jpg)no-repeat center center;
 background-size: contain;}
-.slide-custom#slide6{background: url(../img/project2-2.png)no-repeat center center;
+.slide-custom#slide6{background: url(../img/project2-2.jpg)no-repeat center center;
 background-size: contain;}
-.slide-custom#slide7{background: url(../img/project2-3.png)no-repeat center center;
+.slide-custom#slide7{background: url(../img/project2-3.jpg)no-repeat center center;
 background-size: contain;}
 .slide-custom#slide8{background: url(../img/project2-4.jpg)no-repeat center center;
 background-size: contain;}
@@ -855,6 +855,17 @@ background-size: contain;}
 .contactMe{
   display: none;
 }
+.contactBG{
+  display: none;
+  z-index: 990;
+  background-color: transparent;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  opacity:0.95;
+  /*background: url(../img/contactBG-small.png)top left no-repeat;*/
+}
+
 .backgroundVideo {
     position: fixed;
     top:40px;
@@ -909,6 +920,10 @@ i#close:hover{
     width: 100%;
     margin: 0px;
   }
+  .contactBG{
+    background: url(../img/contactBG-big.png)bottom left no-repeat;
+  }
+
 }
 
 
@@ -1184,7 +1199,7 @@ p.legend.i{
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background: url(../img/logo.png) top center no-repeat;
+  background: url(../img/logo.jpg) top center no-repeat;
   background-size: contain;
   height: 150px;
   width:150px;

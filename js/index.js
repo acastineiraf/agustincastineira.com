@@ -317,10 +317,10 @@ if (document.images) {
   img9.src = "./img/project3-9.jpg";
   img10.src = "./img/project3-10.jpg";
   img11.src = "./img/project3-11.jpg";
-  img12.src = "./img/project1-8.png";
-  img13.src = "./img/project2-1.png";
-  img14.src = "./img/project2-2.png";
-  img15.src = "./img/project2-3.png";
+  img12.src = "./img/project1-8.jpg";
+  img13.src = "./img/project2-1.jpg";
+  img14.src = "./img/project2-2.jpg";
+  img15.src = "./img/project2-3.jpg";
   img16.src = "./img/project2-4.jpg";
   img17.src = "./img/project1-1.jpg";
   img18.src = "./img/project1-2.jpg";
