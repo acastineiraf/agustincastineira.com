@@ -119,7 +119,7 @@ if (document.images) {
 	 img_1 = new Image();
 
    img_0.src = "./img/s1/orange.png";
-   img_1.src = "./img/s1/Agus.png";
+   img_1.src = "./img/s1/Agus.jpg";
 
 }
 

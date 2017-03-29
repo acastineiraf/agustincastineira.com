@@ -132,7 +132,7 @@ h6{
     border-color: #555 transparent  transparent  transparent;
 }
 
-@media all and  (min-width: 768px) {
+@media all and  (min-width: 769px) {
   /* Toggle this class - hide and show the popup */
   .popup:hover > span {
       visibility: visible;
@@ -903,15 +903,16 @@ background-size: contain;}
 }
 
 .backgroundVideo {
-    position: fixed;
-    top:40px;
-    left:0;
-    z-index: 999;
-    width: 100%;
-    max-width: 1800px;
-    height: 100%;
-    opacity:0.95;
-    background-color: #59585a;
+  overflow: hidden;
+  position: fixed;
+  top:0px;
+  left: calc((5%)/2 + 100px);
+  z-index: 999;
+  width: calc(95% - 100px);
+  max-width: 1700px;
+  height: 100%;
+  opacity:0.95;
+  background-color: #59585a;
 }
 .container-fluid{margin: 0; padding: 0; height: 100%;}
 .embed-responsive{height: 100%;}
@@ -938,9 +939,9 @@ i#close:hover{
   .backgroundVideo {
       position: fixed;
       top:0px;
-      left:100px;
+      left: calc((5%)/2 + 100px);
       z-index: 999;
-      width: 100%;
+      width: calc(95% - 100px);
       max-width: 1700px;
       height: 100%;
       opacity:0.95;
@@ -965,7 +966,7 @@ i#close:hover{
 }
 @media (min-width: 1800px) {
   .backgroundVideo {
-      left:calc((100% - 1800px)/2 + 100px);}
+      left: calc((100% - 1800px)/2 + 100px);}
 }
 
 
