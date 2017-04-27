@@ -76,7 +76,8 @@ body{
   overflow: hidden;
   margin: 30px auto;
   position: relative;
-  max-width: 95%;
+  width: 95%;
+  max-width: 1150px;
   padding-left: 2.5%;
   padding-right: 2.5%;
   overflow: hidden;
@@ -102,7 +103,11 @@ body{
 #problem1, #problem2{
   color: #fd9e28;
 }
-h3{text-align: center;}
+h2{
+  text-align: center;
+  margin: 50px auto;
+  color: #000000;
+}
 
 #downloadBTN, #subsBBTN{
   background-color: #fd9e28;

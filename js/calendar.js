@@ -111,6 +111,10 @@ $('#goButton').on('click', function(){
 }
 
 $('.calendarContainer').css('animation', 'fadeInUp 1.3s ease-out');
+var top = $('.formcontainer').offset().top;
+$('html, body').animate({
+    scrollTop: top
+},800, 'easeOutQuart');
 });
 
 
