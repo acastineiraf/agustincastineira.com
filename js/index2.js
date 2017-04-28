@@ -1,32 +1,20 @@
 $(document).ready(function(){
 
+// set hero content margins
+function resizeMargin(){
+  if ($(window).height() > 185) {
+    var themargin = ($(window).height() - 155) / 2;
+    $('#hero').css('margin', themargin +'px auto');
+  }
+}
+resizeMargin();
+$(window).on('resize', function(){
+      resizeMargin();
+});
+
 // Hover on candys
   $('.candy').hover( function(){$(this).next('.candy-title').css('opacity','1')}, function(){$(this).next('.candy-title').css('opacity','0')});
 
-// click on candys
-$('.candy').click(function(){
-  //add/remove highlight depending on the candy the user clicks
-
-  for (var i = 0; i < $('.card').length; i++) {
-    if ($(this).attr("id") === $('.card').eq(i).attr("id")) {
-      $('.card').eq(i).addClass("highlighted");
-    }else{
-      $('.card').eq(i).removeClass("highlighted");
-    }
-  }
-
-  if ($(window).width() > 768) {
-
-      var idtogo = $(this).attr("id");
-      var top = $('body').find($('.card#'+ idtogo)).offset().top - 40;
-      $('html, body').animate({
-          scrollTop: top
-      },800, 'easeOutQuart');
-  }else{
-    $('.candy').addClass("hover");
-  }
-
-});
 
 // Projects database------------------------------ :)
 
@@ -77,40 +65,90 @@ var project4 = new project()
 
     var allProjects = [project1, project3, project2, project3, project4, project4, project3, project4, project4];
 
-// Load projects cards
+    // include 3 projects
+    for (var i = 0; i < 3; i++) {
+      $('#AllCardsHolder').append('<div class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-0 col-md-4 col-md-offset-0"><div class="cardHolder" projectName="'+allProjects[i].name+'"><div class="card" id="'+ allProjects[i].type +'"><div class="cardBG"></div><img src="'+ allProjects[i].folderD +'/thumbnail.jpg" class="img-responsive card-picture" alt=""><div class="cardContent"><h3 class="card-title">'+ allProjects[i].title +'</h3><p class="card-description">'+ allProjects[i].description +'</p><p class="link-mobile"><b>see more ></b></p></div></div><div class="card-candy"><h3></h3></div></div></div>');
+    };
+    $('#AllCardsHolder').addClass('yesShow');
 
-for (var i = 0; i < allProjects.length; i++) {
-  $('#AllCardsHolder').append('<div class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-0 col-md-4 col-md-offset-0"><div class="cardHolder" projectName="'+allProjects[i].name+'"><div class="card" id="'+ allProjects[i].type +'"><div class="cardBG"></div><img src="'+ allProjects[i].folderD +'/thumbnail.jpg" class="img-responsive card-picture" alt=""><div class="cardContent"><h3 class="card-title">'+ allProjects[i].title +'</h3><p class="card-description">'+ allProjects[i].description +'</p><p class="link-mobile"><b>see more ></b></p></div></div><div class="card-candy"><h3></h3></div></div></div>');
-}
-$('#AllCardsHolder').append('<div class="shadow-expander"><p></p></div>');
 
-//show all projects
-$('.shadow-expander').on('click', function(){
-  $(this).toggleClass('collapsed');
-  $('#AllCardsHolder').toggleClass('NotCollapsed');
+    // preload thumblails
 
-});
+    // if (document.images) {
+    //
+    //    img_0 = new Image();
+    // 	 img_1 = new Image();
+    //
+    //    img_0.src = "./img/s1/orange.png";
+    //    img_1.src = "./img/s1/Agus.jpg";
+    //
+    // }
+    // click on candys
 
-// open project:include the content in the modal with jquery
+    var top = $('html').find($('#work')).offset().top;
 
-$('.cardHolder').on('click', function(){
-    var element = $(this).attr("projectName");
-    $('.modal-header h2, .modal-body p, .modal-body .projectPictures').empty();
-    $('.modal-header h2').append(eval(element).title);
-    $('.modal-body p').append(eval(element).description);
-    //include images
-    for (var i = 0; i < eval(element).images.length; i++) {
-      $('.modal-body .projectPictures').append('<img src="'+ eval(element).images[i] +'" class="img-responsive" alt="">')
+    $('.candy').click(function(){
+
+      $('#AllCardsHolder').removeClass('yesShow');
+      $('#AllCardsHolder').empty();
+
+      // Load projects cards that match the clicked candy.
+      for (var i = 0; i < allProjects.length; i++) {
+       if ($(this).attr("id") === allProjects[i].type) {
+         $('#AllCardsHolder').append('<div class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-0 col-md-4 col-md-offset-0"><div class="cardHolder" projectName="'+allProjects[i].name+'"><div class="card" id="'+ allProjects[i].type +'"><div class="cardBG"></div><img src="'+ allProjects[i].folderD +'/thumbnail.jpg" class="img-responsive card-picture" alt=""><div class="cardContent"><h3 class="card-title">'+ allProjects[i].title +'</h3><p class="card-description">'+ allProjects[i].description +'</p><p class="link-mobile"><b>see more ></b></p></div></div><div class="card-candy"><h3></h3></div></div></div>');
+       }else if ($(this).attr("id") === "A") {
+         $('#AllCardsHolder').append('<div class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-0 col-md-4 col-md-offset-0"><div class="cardHolder" projectName="'+allProjects[i].name+'"><div class="card" id="'+ allProjects[i].type +'"><div class="cardBG"></div><img src="'+ allProjects[i].folderD +'/thumbnail.jpg" class="img-responsive card-picture" alt=""><div class="cardContent"><h3 class="card-title">'+ allProjects[i].title +'</h3><p class="card-description">'+ allProjects[i].description +'</p><p class="link-mobile"><b>see more ></b></p></div></div><div class="card-candy"><h3></h3></div></div></div>');
+       }
+      }
+
+      // Scroll to the top of the "work" section
+      var body = $("html, body");
+        body.stop().animate({scrollTop:top}, '300', 'swing', function(){
+          $('#AllCardsHolder').addClass('yesShow');
+      });
+
+      // On mobile, show candy title.
+      if ($(window).width() < 768) {
+          $('.candy').addClass("hover");
+      }
+
+    });
+
+
+  // open project:include the content in the modal with jquery
+  $(document).on('click', '.cardHolder', function(){
+
+      var element = $(this).attr("projectName");
+      $('#modal-container .modal-header h2, #modal-container .modal-body p, #modal-container .modal-body .projectPictures').empty();
+      $('#modal-container .modal-header h2').append(eval(element).title);
+
+      $('#modal-container .modal-body p').append(eval(element).description);
+      //include images
+      for (var i = 0; i < eval(element).images.length; i++) {
+        $('#modal-container .modal-body .projectPictures').append('<img src="'+ eval(element).images[i] +'" class="img-responsive" alt="">')
+      }
+      //only for desktop
+    if ($(window).width() > 768) {
+      $('#modal-container').modal('show');
+    }else{
+      $('.cardHolder').addClass("hover");
     }
-  if ($(window).width() > 768) {//only for desktop
-    $('#modal-container').modal('show');
-  }else{
-    $('.cardHolder').addClass("hover");
-  }
-});
+  });
 
-$('.link-mobile').on('click', function(){//only for mobile
-  $('#modal-container').modal('show');
-});
+    //only for mobile
+  $(document).on('click', '.link-mobile', function(){
+    $('#modal-container').modal('show');
+  });
+
+  // Thank you modal logic
+  $('#problem1, #problem2').on('click', function(){
+    $('.problemContainer').toggleClass("showed");
+  });
+  $('.close').on('click', function(){
+    $('.problemContainer').removeClass("showed");
+  });
+
+  //hide the logo loading
+  $('.Loading').css('display','none');
 
 });
