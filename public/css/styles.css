@@ -62,6 +62,12 @@ section#hero{
 }
 
 /*Header section-----------------------*/
+.hero-face{
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: -1;
+}
 .header-title{
   color: #263238;
   font-size: 74px;
@@ -237,11 +243,13 @@ section#hero{
 .cardContent{
   position: absolute;
   width: 215px;
+  height: auto;
+  overflow: hidden;
 }
 .link-mobile{
   display: none;
   position: absolute;
-  bottom: -25px;
+  bottom: -10px;
   right: 20px;
   cursor: pointer;
   text-decoration: underline;
@@ -275,12 +283,22 @@ section#hero{
   height: 26px;
   border-radius: 13px;
 }
+.card-title{
+  max-width: 190px;
+}
 @media (max-width: 768px) {
   .cardHolder:hover > .card .link-mobile{
+    bottom: 5px;
     display: block;
   }
+  .cardContent{
+    position: absolute;
+    width: 215px;
+    height: 205px;
+    overflow: hidden;
+  }
 
-  .card-description{
+  .card .card-description{
     font-size: 13px;
     max-height: 145px;
     overflow: hidden;
@@ -330,18 +348,26 @@ section#hero{
 }
 .modal-body{
   text-align: left;
+  font-size: 16px;
 }
 @media (min-width: 769px) {
   #projectContainer .container {
     max-width: 60%;
   }
 }
+/*-----------------Modal Projects container-----------------*/
+#modal-container .modal-dialog{
+  width: 700px;
+  max-width: 97%;
+}
+
 /*----------------- Contact and subscribe section -----------------*/
 
 #contact-subscribe{
   position: fixed;
   bottom: 0;
   left: 10px;
+  width: auto;
   -webkit-transition: all .4s ease-in-out;
   -moz-transition: all .4s ease-in-out;
   -o-transition: all .4s ease-in-out;
@@ -359,6 +385,10 @@ section#hero{
    .collapsed#contact-subscribe{
     left:0;
     bottom: -100%;
+  }
+  #contact-subscribe{
+    left: 0px;
+    width: 100%;
   }
   #contact-subscribe h3{
     display: inline-block;

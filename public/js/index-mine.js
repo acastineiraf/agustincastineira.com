@@ -47,43 +47,43 @@ var project1 = new project()
 var project2 = new project()
     project2.name = "project2";
     project2.type = "P";
-    project2.title = "Title project 2";
+    project2.title = "The Focused Toilet";
     project2.description = "";
     project2.year = "2014-2015";
-    project2.images = ["./projects/02/01.jpg","./projects/02/02.jpg","./projects/02/03.jpg","./projects/02/04.jpg"];
+    project2.images = ["./projects/02/01.jpg"];
     project2.folderD = "./projects/02";
 
 var project3 = new project()
     project3.name = "project3";
-    project3.type = "UX";
-    project3.title = "Title Project 3";
+    project3.type = "P";
+    project3.title = "Trec Fuel";
     project2.description = "";
     project3.year = "2014-2015";
-    project3.images = ["./projects/03/01.jpg","./projects/03/02.jpg","./projects/03/03.jpg","./projects/03/04.jpg"];
+    project3.images = ["./projects/03/01.jpg","./projects/03/02.jpg"];
     project3.folderD = "./projects/03";
 
 var project4 = new project()
     project4.name = "project4";
-    project4.type = "UX";
-    project4.title = "Title Project 4";
+    project4.type = "P";
+    project4.title = "Life Calendar";
     project4.description = "";
     project4.year = "2014-2015";
-    project4.images = ["./projects/04/01.jpg","./projects/04/02.jpg","./projects/04/03.jpg","./projects/04/04.jpg"];
+    project4.images = ["./img/poster.jpg","./projects/04/01.jpg"];
     project4.folderD = "./projects/04";
 
 var project5 = new project()
     project5.name = "project5";
     project5.type = "UX";
-    project5.title = "Title Project 4";
+    project5.title = "THE O App";
     project5.description = "";
     project5.year = "2014-2015";
-    project5.images = ["./projects/05/01.jpg","./projects/05/02.jpg","./projects/05/03.jpg","./projects/05/04.jpg"];
+    project5.images = ["./projects/05/01.jpg","./projects/05/02.gif","./projects/05/03.jpg","./projects/05/04.jpg"];
     project5.folderD = "./projects/05";
 
 var project6 = new project()
     project6.name = "project6";
     project6.type = "UX";
-    project6.title = "Title Project 4";
+    project6.title = "Email Design & Dev";
     project6.description = "";
     project6.year = "2014-2015";
     project6.images = ["./projects/06/01.jpg","./projects/06/02.jpg","./projects/06/03.jpg","./projects/06/04.jpg"];
@@ -144,7 +144,7 @@ var project9 = new project()
 
           // include 3 first projects
           for (var j = 0; j < 3; j++) {
-            $('#AllCardsHolder').append('<div class="col-xs-12 col-xs-offset-0 col-sm-6 col-sm-offset-0 col-md-4 col-md-offset-0" id="home-card"><div class="cardHolder" projectName="'+allProjects[j].name+'"><div class="card" id="'+ allProjects[j].type +'"><div class="cardBG"></div><img src="'+ allProjects[j].folderD +'/thumbnail.jpg" class="img-responsive card-picture" alt=""><div class="cardContent"><h3 class="card-title">'+ allProjects[j].title +'</h3><p class="card-description">'+ allProjects[j].description +'</p><p class="link-mobile"><b>see more ></b></p></div></div><div class="card-candy"><h3></h3></div></div></div>');
+            $('#AllCardsHolder').append('<div class="col-xs-12 col-xs-offset-0 col-sm-6 col-sm-offset-0 col-md-4 col-md-offset-0" id="home-card"><div class="cardHolder" projectName="'+allProjects[j].name+'"><div class="card" id="'+ allProjects[j].type +'"><div class="cardBG"></div><img src="'+ allProjects[j].folderD +'/thumbnail.jpg" class="img-responsive card-picture" alt=""><p class="link-mobile"><b>see more ></b></p><div class="cardContent"><h3 class="card-title">'+ allProjects[j].title +'</h3><p class="card-description">'+ allProjects[j].description +'</p></div></div><div class="card-candy"><h3></h3></div></div></div>');
           };
           $('#AllCardsHolder').addClass('yesShow');
       }else if (($('.project1-container').length !== 0) && ($('.project2-container').length !== 0) && ($('.project3-container').length !== 0) &&
@@ -183,9 +183,9 @@ var project9 = new project()
       // Load projects cards that match the clicked candy.
       for (var i = 0; i < allProjects.length; i++) {
        if ($(this).attr("id") === allProjects[i].type) {
-         $('#AllCardsHolder').append('<div class="col-xs-12 col-xs-offset-0 col-sm-6 col-sm-offset-0 col-md-4 col-md-offset-0" id="home-card"><div class="cardHolder" projectName="'+allProjects[i].name+'"><div class="card" id="'+ allProjects[i].type +'"><div class="cardBG"></div><img src="'+ allProjects[i].folderD +'/thumbnail.jpg" class="img-responsive card-picture" alt=""><div class="cardContent"><h3 class="card-title">'+ allProjects[i].title +'</h3><p class="card-description">'+ allProjects[i].description +'</p><p class="link-mobile"><b>see more ></b></p></div></div><div class="card-candy"><h3></h3></div></div></div>');
+         $('#AllCardsHolder').append('<div class="col-xs-12 col-xs-offset-0 col-sm-6 col-sm-offset-0 col-md-4 col-md-offset-0" id="home-card"><div class="cardHolder" projectName="'+allProjects[i].name+'"><div class="card" id="'+ allProjects[i].type +'"><div class="cardBG"></div><img src="'+ allProjects[i].folderD +'/thumbnail.jpg" class="img-responsive card-picture" alt=""><p class="link-mobile"><b>see more ></b></p><div class="cardContent"><h3 class="card-title">'+ allProjects[i].title +'</h3><p class="card-description">'+ allProjects[i].description +'</p></p></div></div><div class="card-candy"><h3></h3></div></div></div>');
        }else if ($(this).attr("id") === "A") {
-         $('#AllCardsHolder').append('<div class="col-xs-12 col-xs-offset-0 col-sm-6 col-sm-offset-0 col-md-4 col-md-offset-0" id="home-card"><div class="cardHolder" projectName="'+allProjects[i].name+'"><div class="card" id="'+ allProjects[i].type +'"><div class="cardBG"></div><img src="'+ allProjects[i].folderD +'/thumbnail.jpg" class="img-responsive card-picture" alt=""><div class="cardContent"><h3 class="card-title">'+ allProjects[i].title +'</h3><p class="card-description">'+ allProjects[i].description +'</p><p class="link-mobile"><b>see more ></b></p></div></div><div class="card-candy"><h3></h3></div></div></div>');
+         $('#AllCardsHolder').append('<div class="col-xs-12 col-xs-offset-0 col-sm-6 col-sm-offset-0 col-md-4 col-md-offset-0" id="home-card"><div class="cardHolder" projectName="'+allProjects[i].name+'"><div class="card" id="'+ allProjects[i].type +'"><div class="cardBG"></div><img src="'+ allProjects[i].folderD +'/thumbnail.jpg" class="img-responsive card-picture" alt=""><p class="link-mobile"><b>see more ></b></p><div class="cardContent"><h3 class="card-title">'+ allProjects[i].title +'</h3><p class="card-description">'+ allProjects[i].description +'</p></div></div><div class="card-candy"><h3></h3></div></div></div>');
        }
       }
 
@@ -202,28 +202,33 @@ var project9 = new project()
     });
 
 
-  //function to include related projects in the footer of the modal
-  function addRelateds(theprojectname){
-    var counter = 0;
-     $('#modal-container .modal-footer').append('<h3 style="text-align: center;">More related projects</h3>');
-    for (var i = 0; i < allProjects.length ; i++) {
-     if ((allProjects[i].type === theprojectname.type) && (allProjects[i].name != theprojectname.name) && (counter < 2) ) {
-       $('#modal-container .modal-footer').append('<div class="col-xs-12 col-xs-offset-0 col-sm-6 col-sm-offset-0 " id="modal-card"><div class="cardHolder" projectName="'+allProjects[i].name+'"><div class="card" id="'+ allProjects[i].type +'"><div class="cardBG"></div><img src="'+ allProjects[i].folderD +'/thumbnail.jpg" class="img-responsive card-picture" alt=""><div class="cardContent"><h3 class="card-title">'+ allProjects[i].title +'</h3><p class="card-description">'+ allProjects[i].description +'</p><p class="link-mobile"><b>see more ></b></p></div></div><div class="card-candy"><h3></h3></div></div></div>');
-       counter = counter + 1;
+    //function to include related projects in the footer of the modal
+    function addRelateds(theprojectname){
+      var counter = 0;
+       $('#modal-container .modal-footer').append('<h3 style="text-align: center;">More related projects</h3>');
+      for (var i = 0; i < allProjects.length ; i++) {
+       if ((allProjects[i].type === theprojectname.type) && (allProjects[i].name != theprojectname.name) && (counter < 2) ) {
+         $('#modal-container .modal-footer').append('<div class="col-xs-12 col-xs-offset-0 col-sm-6 col-sm-offset-0 " id="modal-card"><div class="cardHolder" projectName="'+allProjects[i].name+'"><div class="card" id="'+ allProjects[i].type +'"><div class="cardBG"></div><img src="'+ allProjects[i].folderD +'/thumbnail.jpg" class="img-responsive card-picture" alt=""><p class="link-mobile"><b>see more ></b></p><div class="cardContent"><h3 class="card-title">'+ allProjects[i].title +'</h3><p class="card-description">'+ allProjects[i].description +'</p></div></div><div class="card-candy"><h3></h3></div></div></div>');
+         counter = counter + 1;
+       }
      }
-   }
-  }
+    }
 
   //function for including the content in the modal
   function fillProjectModal(theprojectname){
-    $('#modal-container .modal-header h2, #modal-container .modal-body p, #modal-container .modal-body .projectPictures, #modal-container .modal-footer').empty();
+
+    $('#modal-container .modal-header h2, #modal-container .modal-body, #modal-container .modal-footer').empty();
     $('#modal-container .modal-header h2').append(theprojectname.title);
-    $('#modal-container .modal-body p').append(theprojectname.description);
 
     //include images
     for (var i = 0; i < theprojectname.images.length; i++) {
-      $('#modal-container .modal-body .projectPictures').append('<img src="'+ theprojectname.images[i] +'" class="img-responsive" alt="">')
+      $('#modal-container .modal-body').append('<img src="'+ theprojectname.images[i] +'" class="img-responsive" alt="">')
     }
+
+    $('#modal-container .modal-body').append(theprojectname.description);
+
+    //include Contact me
+    $('#modal-container .modal-body').append('<p> -<br> If you are interested in working with me in a similar project or in a completely different one just <a href="#/" data-dismiss="modal" data-toggle="modal" data-target="#contact-form">drop me some words!</a></p>');
 
     //include related prjects in the footer
     addRelateds(theprojectname);
@@ -241,14 +246,14 @@ var project9 = new project()
       console.log("home-card | desktop");
       fillProjectModal(projectName);
       $('#modal-container').modal('show');
-    }else if(($(this).parent().attr('id') === "home-card") && ($(window).width() < 768)){
+    }else if(($(this).parent().attr('id') === "home-card") && ($(window).width() < 769)){
       console.log("home-card | mobile");
       fillProjectModal(projectName);
       $('.cardHolder').addClass("hover");
     }else if(($(this).parent().attr('id') === "modal-card") && ($(window).width() > 768)){
         console.log("modal-card | desktop");
         fillProjectModal(projectName);
-    }else if(($(this).parent().attr('id') === "modal-card") && ($(window).width() < 768)){
+    }else if(($(this).parent().attr('id') === "modal-card") && ($(window).width() < 769)){
       console.log("modal-card | mobile");
       $('.cardHolder').addClass("hover");
     }
