@@ -358,7 +358,7 @@ section#hero{
 /*-----------------Modal Projects container-----------------*/
 #modal-container .modal-dialog{
   width: 700px;
-  max-width: 97%;
+  max-width: calc(100% - 20px);
 }
 
 /*----------------- Contact and subscribe section -----------------*/
