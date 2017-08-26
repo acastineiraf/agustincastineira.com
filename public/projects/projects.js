@@ -162,7 +162,7 @@ var project17 = new project()
     project17.title = "Web Design - Funeral Homes";
     project17.description = "";
     project17.year = "2014-2015";
-    project17.images = ["./projects/16/01.jpg"];
+    project17.images = ["./projects/17/01.jpg"];
     project17.folderD = "./projects/17";
 
     // Create the array of all projects

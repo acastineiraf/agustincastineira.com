@@ -1,5 +1,5 @@
 
-// $(document).ready(function(){
+$(document).ready(function(){
 
 // set hero content margins
 function resizeMargin(){
@@ -13,8 +13,18 @@ $(window).on('resize', function(){
       resizeMargin();
 });
 
+// Hover on candys
+  $('.candy').hover( function(){
+    $(this).next('.candy-title').css('opacity','1');
+    $(this).toggleClass("no-radar");
+  }, function(){
+    $(this).next('.candy-title').css('opacity','0');
+    $(this).toggleClass("no-radar");
+  });
+
 // Make contact me appear
 var scroll_pos = 0;
+
 $(document).scroll(function() {
     scroll_pos = $(this).scrollTop();
     if(scroll_pos > 210) {
@@ -22,8 +32,6 @@ $(document).scroll(function() {
       };
 });
 
-// Hover on candys
-  $('.candy').hover( function(){$(this).next('.candy-title').css('opacity','1')}, function(){$(this).next('.candy-title').css('opacity','0')});
 
 // click on candys
 var worktop = $('html').find($('#work')).offset().top;
@@ -131,4 +139,20 @@ function addRelateds(theprojectname){
   //hide the logo after loading everything
   $('.Loading').css('display','none');
 
-// });
+  // Close modal using the back button
+    $('div.modal').on('show.bs.modal', function() {
+  	var modal = this;
+  	var hash = modal.id;
+  	window.location.hash = hash;
+  	window.onhashchange = function() {
+    		if (!location.hash){
+    			$(modal).modal('hide')
+    		}
+    	}
+    });
+
+    $('div.modal').on('hide', function() {
+    	var hash = this.id;
+    	history.pushState('', document.title, window.location.pathname)
+    });
+  });
